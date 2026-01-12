@@ -14,7 +14,13 @@
 <body style="margin:0; overflow:hidden;">
   
   <a-scene
-    mindar-image="imageTargetSrc: targets.mind;"
+    mindar-image="imageTargetSrc: targets.mind;
+                maxTrack: 1
+                smooth: true; 
+                smoothCount: 5; 
+                smoothTolerance: 0.01; 
+                smoothThreshold: 2"
+    embedded
     color-space="sRGB"
     renderer="colorManagement: true, physicallyCorrectLights"
     vr-mode-ui="enabled: false"
@@ -32,8 +38,8 @@
         position="0 0.1 0"
         rotation="0 0 0">
       </a-gltf-model>
+    <a-entity mindar-image-target="targetIndex: 0" visible="true">
     </a-entity>
-
     <a-camera position="0 0 0"></a-camera>
   </a-scene>
 
