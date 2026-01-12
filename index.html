@@ -4,6 +4,26 @@
   <meta charset="utf-8">
   <title>AR Logo</title>
 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+
+  <style>
+    html, body {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+    a-scene {
+      width: 100vw;
+      height: 100vh;
+    }
+    canvas {
+      width: 100vw !important;
+      height: 100vh !important;
+    }
+  </style>
+
   <!-- A-Frame -->
   <script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
 
@@ -11,7 +31,7 @@
   <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-image-aframe.prod.js"></script>
 </head>
 
-<body style="margin:0; overflow:hidden;">
+<body>
 
   <a-scene
     mindar-image="imageTargetSrc: targets.mind;
@@ -28,9 +48,7 @@
       <a-asset-item id="logo" src="logo.glb"></a-asset-item>
     </a-assets>
 
-    <!-- TARGET -->
     <a-entity mindar-image-target="targetIndex: 0">
-
       <a-gltf-model
         src="#logo"
         scale="0.1 0.1 0.1"
@@ -38,7 +56,6 @@
         rotation="-90 180 0"
         animation-mixer="clip: *">
       </a-gltf-model>
-
     </a-entity>
 
     <a-camera position="0 0 0"></a-camera>
